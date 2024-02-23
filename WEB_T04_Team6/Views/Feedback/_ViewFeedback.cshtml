@@ -1,0 +1,110 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Feedback>
+
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive bg-light">
+        <table id="viewFeedback" class="table table-striped table-bordered ">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Feedback</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FeedbackID.ToString()</td>
+                        <td>@item.DateTimePosted.ToLongDateString()</td>
+                        @*<td>
+                                @{ string imageFileName = item.FeedbackID + ".jpg"; }
+                                <img src="~/images/@imageFileName"
+                                     style="width:50px" />
+                            </td>*@
+                        <td>@item.Title</td>
+                        <td>@item.Text</td>
+                        @*<td>
+                                @{ string employmentStatus;
+                                    if (item.IsFullTime)
+                                    {
+                                        employmentStatus = "Full-Time";
+                                    }
+                                    else
+                                    {
+                                        employmentStatus = "Part-Time";
+                                    }
+                                }
+                                @employmentStatus
+                            </td>*@
+
+                        <td>
+                            @*<a asp-action="" asp-controller="Feedback"
+                                asp-route-id="@item.FeedbackID"><img src="~/images/Add Button.png" class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter" alt="Add Icon"></a>*@
+                            <button type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg"><img src="~/images/Add Button.png" height="50px" width="50px" /></button>
+                            <body>
+                                <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="row">
+                                                    <label asp-for="@item.FeedbackID" class="col-sm-6 col-form-label">Feedback ID : @item.FeedbackID </label>
+
+                                                    <label asp-for="@item.DateTimePosted" class="col-sm-6 col-form-label">Date : @item.DateTimePosted.ToShortDateString()</label>
+
+                                                    <label asp-for="@item.MemberID" class="col-sm-6 col-form-label">Member ID : @item.MemberID</label>
+                                                </div>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 class="modal-title" id="exampleModalCenter">@item.Title</h5>
+
+                                                <div class="row" id="exampleModalCenter">
+                                                    <p style="color:black; margin-left: 16px;">@item.Text</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="container">
+                                                <form method="post" asp-controller="Response" asp-action="Create">
+                                                    <div class="form-group">
+                                                        <input name="feedbackid" value="@item.FeedbackID" type="text" hidden />
+                                                        <input name="staffid" value="@Context.Session.GetString("StaffID")" type="text" hidden />
+
+                                                        <label for="response" class=".text-dark"><strong>Response</strong></label>
+                                                        <label for="response" class="col-sm-6 col-form-label">Date : @DateTime.Today.ToShortDateString()</label>
+                                                        <textarea class="form-control" rows="5" id="response" name="responseText"></textarea>
+                                                        <span style="font-style:italic;">
+                                                            (DO NOT POST AN EMPTY RESPONSE)
+                                                        </span>
+                                                        <hr />
+                                                        <br />
+                                                        <button class="btn btn-dark" value="Send">send</button>
+                                                        <br />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </body>
+
+                            @*<a asp-action="Details" asp-controller="Staff"
+                                   asp-route-id="@item.FeedbackID">Details</a> |
+                                <a asp-action="Delete" asp-controller="Staff"
+                                   asp-route-id="@item.FeedbackID">Delete</a>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}

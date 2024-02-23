@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Feedback>
+
+@{
+    ViewData["Title"] = "View Feedback";
+}
+
+<h4 class="PageTitle text-center"><strong>FEEDBACK</strong></h4>
+
+<body class="bg-white">
+    <p><a href="~/Home/MarketingMain">Back</a></p>
+    <span style="color:red;">@TempData["Alert"]</span>
+</body>
+
+<!-- Add a partial view to display a list of feedback records
+in a tabular format. -->
+<partial name="~/Views/Feedback/_ViewFeedback.cshtml" model="@Model" />

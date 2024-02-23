@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Sales Main Page";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ZZ Fashion</title>
+    <link rel="icon" img src="~/images/B&W Logo.png">
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row hidden-md-up">
+            <div class="col-sm-6 text-center py-4">
+                <div class="card border border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Create Customer</h5>
+                        <img src="~/images/User.jpg"
+                             class="img-fluid" alt="User Icon"><br />
+                        <a href="~/Member/Create" class="btn btn-dark">Create</a>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-sm-6 text-center py-4">
+                <div class="card border border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">View Customer</h5>
+                        <img src="~/images/UserManifyingGlass.jpg"
+                             class="img-fluid" alt="Search User Icon"><br />
+                        <a href="~/Member/Index" class="btn btn-dark">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center py-4">
+                <div class="card border border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Collect Voucher</strong></h5>
+                        <img src="~/images/Vouchers.jpg" 
+                             class="img-fluid" alt="Voucher Icon"><br />
+                        <a href="~/Voucher/Index" class="btn btn-dark">Collect</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center py-4">
+                <div class="card border border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Redeem Voucher</strong></h5>
+                        <img src="~/images/RedeemVoucher.jpg" 
+                             class="img-fluid" alt="Redeem Icon"><br />
+                        <a href="~/Voucher/Redeem" class="btn btn-dark">Redeem</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Member>
+
+@{
+    ViewData["Title"] = "View Members";
+}
+
+<h4 class="PageTitle">Members</h4>
+<p><a asp-action="Create">Create New Member</a></p>
+<partial name="~/Views/Member/Search.cshtml" />
+<br />
+<span style="color:red;">@TempData["IdNotFound"]</span>
+<partial name="~/Views/Member/_ViewMember.cshtml" model="@Model" />

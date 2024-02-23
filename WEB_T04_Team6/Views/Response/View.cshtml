@@ -1,0 +1,48 @@
+﻿@model WEB_T04_Team6.Models.ResponseViewModel
+
+@{
+    ViewData["Title"] = "View Responses";
+}
+
+<h4 class="PageTitle text-center"><strong>RESPONSE</strong></h4>
+<body class="bg-white">
+    <p><a href="~/Response/Index">Back</a></p>
+</body>
+<hr />
+<body class="bg-white">
+    <form asp-controller="Response" asp-action="View" method="post">
+        <fieldset class="FormContent">
+            <div class="form-group row">
+                <label asp-for="MemberID" class="col-sm-2 col-form-label">Member</label>
+                <div class="col-sm-4 col-md-3 form-control-plaintext">
+                    @Html.Display("MemberID")
+                </div>
+                <label asp-for="DateTimePosted" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4 col-md-2 form-control-plaintext">
+                    @Html.Display("DateTimePosted")
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="FeedbackText" class="col-sm-4 col-form-label" hidden></label>
+                <div class="col-sm-9 form-control-plaintext">
+                    @Html.Display("FeedbackText")
+                </div>
+            </div>
+            <hr />
+            <div class="form-group row">
+                <label asp-for="StaffID" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-4 col-md-3 form-control-plaintext">
+                    @Html.Display("StaffID")
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Text" class="col-sm-4 col-form-label" hidden></label>
+                <div class="col-sm-9 form-control-plaintext">
+                    @Html.Display("Text")
+                </div>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+

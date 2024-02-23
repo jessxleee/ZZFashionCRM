@@ -1,0 +1,61 @@
+﻿@model WEB_T04_Team6.Models.Voucher
+
+@{
+    ViewData["Title"] = "MemberVoucher";
+}
+
+<h1>MemberVoucher</h1>
+
+<body style="background-color:white">
+    <hr />
+    <fieldset class="FormContent">
+        <div class="form-group row">
+            <label asp-for="IssuingID"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("IssuingID")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Amount" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("Amount")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="DateTimeIssued" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("DateTimeIssued")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="VoucherSN"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("VoucherSN")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Status" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("Status")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="DateTimeRedeemed" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("DateTimeRedeemed")
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="form-group row">
+        <a asp-action="MemberMain" asp-controller="Home">Back</a>
+    </div>
+</body>

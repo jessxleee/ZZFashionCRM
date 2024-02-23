@@ -1,0 +1,72 @@
+﻿@model WEB_T04_Team6.Models.Member
+
+@{
+    ViewData["Title"] = "MemberDetails";
+}
+
+<h1>MemberDetails</h1>
+
+<body class="bg-light">
+    <fieldset class="FormContent">
+        <div class="form-group row">
+            <label asp-for="MemberID"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MemberID")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MName" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MName")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MGender" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MGender")
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="MBirthDate" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MBirthDate")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MAddress"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MAddress")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MCountry"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MCountry")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MTelNo" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MTelNo")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="MEmailAddr" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("MEmailAddr")
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-9 offset-sm-3">
+                <a asp-action="Index"
+                   asp-controller="Member">Back to List</a>
+            </div>
+        </div>
+    </fieldset>
+</body>

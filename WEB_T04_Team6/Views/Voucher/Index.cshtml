@@ -1,0 +1,10 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Voucher>
+
+@{
+    ViewData["Title"] = "Voucher Collection";
+}
+<h4 class="PageTitle">Vouchers Available For Collection</h4>
+          
+<partial name="~/Views/Voucher/_ViewVoucherCollection.cshtml" model="@Model" />
+<a asp-action="SalesMain"
+   asp-controller="Home">Back to List</a>

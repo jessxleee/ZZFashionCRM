@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>ZZ Fashion</title>
+        <link rel="icon" img src="~/images/B&W Logo.png">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <section class="vh-75">
+            <div class="container-fluid h-custom">
+
+                <div class="row d-flex justify-content-center h-100">
+
+                    <div class="col-md-9 col-lg-6 col-xl-5 text-center">
+                        <img src="~/images/ZZFashionnLogo.png"
+                             class="img-fluid" alt="Sample image">
+                    </div>
+
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <div class="divider d-flex align-items-center py-2">
+                            <h3 class="text-center text-dark fw-bold mx-3 mb-0"><b> Log In </b></h3>
+                        </div>
+
+                        <div>
+                            <form method="post" action="~/Home/userLogin">
+                                <!-- LoginID input -->
+                                <div class="form-outline mt-3 mb-2">
+                                    <input type="text" name="loginID" id="loginID" class="form-control form-control-lg"
+                                           placeholder="Enter a valid login ID" required />
+                                    <label class="form-label" for="loginID">Login ID</label>
+                                </div>
+
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-2">
+                                    <input type="password" name="userPassword" id="userPassword" class="form-control form-control-lg"
+                                           placeholder="Enter password" required />
+                                    <label class="form-label" for="userPassword">Password</label>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <!-- Checkbox -->
+                                    <div class="form-check mb-0">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="rememberMe" />
+                                        <label class="form-check-label" for="rememberMe">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Logout Message -->
+                                <div style="text-align:center;">
+                                    @TempData["Logout"]
+                                    <br /><br />
+                                </div>
+
+                                <!--Error Message-->
+                                <span style="color:red;">@TempData["Message"]</span>
+
+                                <!-- login button -->
+                                <div class="text-center text-lg-start mt-4 pt-2">
+                                    <input type="submit" id="btnuserLogin"
+                                           class="btn btn-dark btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Login" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+
+</html>

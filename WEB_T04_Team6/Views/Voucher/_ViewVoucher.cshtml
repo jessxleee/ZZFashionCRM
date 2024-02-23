@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Voucher>
+
+@if (Model.ToList().Count > 0) {
+
+<body class="bg-light">
+    <div class="table-responsive">
+        <table id="viewStaff" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Date Time Issused</th>
+                    <th>MemberID</th>
+                    <th>Amount</th>
+                    <th>Month Issue For</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.DateTimeIssued.ToShortDateString()</td>
+                    <td>@item.MemberID</td>
+                    <td>$@item.Amount</td>
+                    <td>@item.MonthIssuedFor</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+    }
+
+else
+{
+    <span style="color:red">No record found!</span>
+}

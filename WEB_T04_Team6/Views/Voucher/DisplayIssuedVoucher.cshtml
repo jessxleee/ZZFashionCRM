@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.Voucher>
+
+@{
+    ViewData["Title"] = "Voucher Collection";
+}
+
+
+<h4 class="PageTitle text-center"><strong>ISSUED VOUCHER</strong></h4>
+
+<body class="bg-white">
+    <p><a href="~/Home/MarketingMain">Back</a></p>
+</body>
+
+<!-- Add a partial view to display a list of feedback records
+in a tabular format. -->
+<partial name="~/Views/Voucher/_ViewVoucher.cshtml" model="@Model" />

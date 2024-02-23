@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WEB_T04_Team6.Models.SaleTransaction>
+
+@{
+    ViewData["Title"] = "View Transactions";
+}
+
+<h4 class="PageTitle text-center"><strong>TRANSACTIONS</strong></h4>
+
+<body class="bg-white">
+    <p><a href="~/Home/MarketingMain">Back</a></p>
+    <span style="color:red;">@TempData["InvaildMessage"]</span>
+</body>
+
+<!-- Add a partial view to display a list of feedback records
+in a tabular format. -->
+<partial name="~/Views/SaleTransaction/_ViewTransactions.cshtml" model="@Model" />

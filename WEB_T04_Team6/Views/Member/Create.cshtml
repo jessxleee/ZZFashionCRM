@@ -1,0 +1,113 @@
+﻿@model WEB_T04_Team6.Models.Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="PageTitle">New Customer</h4>
+<hr />
+<body class="bg-light">
+    <form asp-action="Create">
+        <div class="col-lg-10 text-left py-9">
+            <div class="form-group row">
+                <label asp-for="MemberID"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MemberID" class="form-control" />
+                </div>
+                <span asp-validation-for="MemberID"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="MName"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MName" class="form-control" />
+                </div>
+                <span asp-validation-for="MName"
+                      class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="MGender"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <div class="form-group form-check-inline">
+                        <label class="col-form-label">
+                            <input asp-for="MGender" type="radio" value="M"
+                                   checked class="form-check-input" />
+                            <span style="font-weight:normal;
+ padding-right:20px">Male</span>
+                        </label>
+                        <label class="col-form-label">
+                            <input asp-for="MGender" type="radio" value="F"
+                                   class="form-check-input" />
+                            <span style="font-weight:normal;
+ padding-right:20px">Female</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="MBirthDate"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MBirthDate" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="MAddress"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MAddress" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="MCountry"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <select asp-for="MCountry"
+                            asp-items="@ViewData["CountryList"]
+        as List<SelectListItem>"
+                            class="form-control">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="MTelNo"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MTelNo" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="MEmailAddr"
+                       class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9 col-md-5">
+                    <input asp-for="MEmailAddr" class="form-control" />
+                </div>
+                <span asp-validation-for="MEmailAddr"
+                      class="text-danger"></span>
+            </div>
+            <div class="form-group row" hidden>
+                <input asp-for="MPassword" class="form-control" />
+                <span asp-validation-for="MPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3 text-center">
+                    <input type="submit" value="Create"
+                           class="btn btn-dark" />
+                </div>
+            </div>
+            <span style="color:red;">@TempData["CreationUnsuccessful"]</span>
+
+
+
+
+            <a asp-action="SalesMain" asp-controller="Home">Back to List</a>
+        </div>
+    </form>
+</body>
